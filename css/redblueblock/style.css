@@ -1,0 +1,27 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+h1 {
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.bluebox {
+	width: 500px;
+	height: 500px;
+	background-color: #8b8bba;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.redbox {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}

@@ -1,0 +1,33 @@
+body {
+	color: white;
+}
+
+.header {
+	background-color: red;
+	height: 50px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+.sidenav {
+	background-color: cyan;
+	height: 300px;
+	width: 300px;
+	display: inline-block;
+	width: 24vw;
+	border-radius: 50%;
+}
+
+.body {
+	background-color: black;
+	height: 500px;
+	display: inline-block;
+	width: 70vw;
+	margin-left: 10px;
+}
+
+.footer {
+	background-color: grey;
+	height: 50px;
+	margin-top: 10px;
+}

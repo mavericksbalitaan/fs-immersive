@@ -1,0 +1,33 @@
+.container {
+	border: 1px solid #000;
+	height: 100px;
+}
+
+.box {
+	height: 50px;
+	width: 50px;
+}
+
+.bluebox {
+	background-color: blue;
+}
+.redbox {
+	background-color: red;
+}
+.greenbox {
+	background-color: green;
+	margin-left: auto;
+	margin-right: 50px;
+	margin-top: 25px;
+}
+
+.div1 {
+	padding-left: 500px;
+	padding-top: 50px;
+}
+
+.div2 {
+	padding-top: 50px;
+}
+
+

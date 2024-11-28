@@ -1,0 +1,21 @@
+body {
+	background-color: #fe9677;
+}
+
+p {
+	color: red;
+	font-size: 10px;
+}
+
+h1 {
+	color: blue;
+}
+
+.title {
+	color: 	white;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#title {
+	color: #000000;
+}

@@ -1,4 +1,4 @@
-'''
+"""
 King of the Jungle:
 
 Assignment Hint: https://www.geeksforgeeks.org/type-isinstance-python/Links to an external site.
@@ -14,86 +14,119 @@ Assignment Hint: https://www.geeksforgeeks.org/type-isinstance-python/Links to a
 - If the Cheetah runs away from any of its foes then they lose 20 points in health.
 - Now after doing all of this try to create a game where ALL objects get created and All their methods are used. In the end there should only be one winner. Challenge: Try to make your game challenging enough so that the Lion doesn't win every single time.
 
-'''
+"""
 
 import random
 
+
 class BigCat:
-    def __init__(self):
-        self.speed = 5
-        self.strength = 5
-        self.intelligence = 5
-        self.health = 5
-        self.durability = 5
+    def __init__(self, speed=5, strength=5, intelligence=5, health=5, durability=5):
+        self.speed = speed
+        self.strength = strength
+        self.intelligence = intelligence
+        self.health = health
+        self.durability = durability
+
+    def printStats(self):
+        print(
+            f"Type: {type(self)} Speed: {self.speed}, Strength: {self.strength}, Intelligence: {self.intelligence}, Health: {self.health}, Durability: {self.durability}"
+        )
+
 
 class Lion(BigCat):
-    def __init__(self):
-        super().__init__()
-        self.strength = 50
-        self.health = 50
+    def __init__(self, speed=5, strength=50, intelligence=5, health=50, durability=5):
+        super().__init__(speed, strength, intelligence, health, durability)
 
     def king(self, obj):
         if isinstance(obj, Cheetah):
-            chance = random.randint(1, 100)
-            if chance <= 60:
+            chance = random.random()
+            print(f"Cheetah's survival rate: {round(chance, 2)}")
+            if chance > 0.6:
                 print("The Cheetah escaped unscathed")
-                return
-        obj.speed = 0
-        obj.strength = 0
-        obj.intelligence = 0
-        obj.health = 0
-        obj.durability = 0
+            else:
+                obj.speed = 0
+                obj.strength = 0
+                obj.intelligence = 0
+                obj.health = 0
+                obj.durability = 0
+        else:
+            obj.speed = 0
+            obj.strength = 0
+            obj.intelligence = 0
+            obj.health = 0
+            obj.durability = 0
+
 
 class Leopard(BigCat):
-    def __init__(self):
-        super().__init__()
-        self.strength = 30
-        self.intelligence = 30
-        self.health = 30
+    def __init__(self, speed=5, strength=30, intelligence=30, health=30, durability=5):
+        super().__init__(speed, strength, intelligence, health, durability)
 
     def attack(self, obj):
         if isinstance(obj, Lion):
-            obj.king(obj)
+            obj.king(self)
         elif isinstance(obj, Cheetah):
-            chance = random.randint(1, 100)
-            if chance <= 60:
+            chance = random.random()
+            print(f"Cheetah's survival rate: {round(chance, 2)}")
+            if chance > 0.6:
                 print("The Cheetah escaped unscathed")
                 return
         obj.health -= 15
 
+
 class Cheetah(BigCat):
-    def __init__(self):
-        super().__init__()
-        self.speed = 75
-        self.strength = 25
-        self.intelligence = 25
-        self.health = 25
+    def __init__(self, speed=75, strength=25, intelligence=25, health=25, durability=5):
+        super().__init__(speed, strength, intelligence, health, durability)
 
     def run(self, obj):
         if isinstance(obj, Leopard):
-            obj.attack(obj)
+            obj.attack(self)
         elif isinstance(obj, Lion):
-            obj.king(obj)
+            obj.king(self)
         else:
-            chance = random.randint(1, 100)
-            if chance <= 60:
+            chance = random.random()
+            print(f"Cheetah's survival rate: {round(chance, 2)}")
+            if chance > 0.6:
                 print("The Cheetah escaped unscathed")
-                obj.health -= 20
                 return
-            obj.health -= 20
-
-lion = Lion()
-leopard = Leopard()
-cheetah = Cheetah()
-
-lion.king(leopard)
-leopard.attack(cheetah)
-
-cheetah.run(lion)
-cheetah.run(leopard)
-
-print(f"Lion: {lion.__dict__}")
-print(f"Leopard: {leopard.__dict__}")
-print(f"Cheetah: {cheetah.__dict__}")
+            else:
+                obj.health -= 20
 
 
+#
+# cheetah.run(lion)
+# cheetah.run(leopard)
+#
+# print(f"Lion: {lion.__dict__}")
+# print(f"Leopard: {leopard.__dict__}")
+# print(f"Cheetah: {cheetah.__dict__}")
+
+
+def game():
+    lion = Lion()
+    leopard = Leopard()
+    cheetah = Cheetah()
+
+    lion.printStats()
+    leopard.printStats()
+    cheetah.printStats()
+
+    # lion.king(leopard)
+    # leopard.printStats()
+    #
+    # lion.king(cheetah)
+    # cheetah.printStats()
+
+    # leopard.attack(cheetah)
+    # cheetah.printStats()
+
+    # leopard.attack(lion)
+    # leopard.printStats()
+
+    # cheetah.run(lion)
+    # cheetah.printStats()
+
+    # cheetah.run(leopard)
+    # cheetah.printStats()
+
+
+game()

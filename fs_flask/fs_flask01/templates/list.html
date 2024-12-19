@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href={{ url_for("static", filename='list.css' )}}>
+{% endblock %} {% block body %}
+<div class="container">
+  <h1>List of Users</h1>
+  <ul>
+    {% if users:%} {% for user in users %}
+    <li>
+      <p>{{ user.username}}</p>
+      <p>{{ user.fname }} {{ user.lname}}</p>
+      {% endfor %} {% endif%}
+    </li>
+  </ul>
+
+  <a href="/">
+    <button>Add User</button>
+  </a>
+</div>
+
+{% endblock %}

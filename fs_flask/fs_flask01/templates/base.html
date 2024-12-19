@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Full Stack Flask Assignment 01</title>
+    {% block head%}
+    <link rel="stylesheet" type="text/css" href={{ url_for("static", filename='base.css' )}}>
+    {% endblock %}
+  </head>
+  <body>
+    {% block body%} {% endblock %}
+  </body>
+</html>

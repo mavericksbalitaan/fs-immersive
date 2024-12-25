@@ -132,15 +132,13 @@
       <input type="submit" name="submit" value="Submit" />
     </form>
 
-    {% if fname or lname or email or state or city or zipcode %}
     <div class="container">
-      <h1>First Name: {{ fname }}</h1>
-      <h1>Last Name: {{ lname }}</h1>
-      <h1>Email: {{ email }}</h1>
-      <h1>State: {{ state }}</h1>
-      <h1>City: {{ city }}</h1>
-      <h1>Zip Code: {{ zipcode }}</h1>
+      <h1>First Name: {{ session['fname'] }}</h1>
+      <h1>Last Name: {{ session['lname'] }}</h1>
+      <h1>Email: {{ session['email'] }}</h1>
+      <h1>State: {{ session['state'] }}</h1>
+      <h1>City: {{ session['city'] }}</h1>
+      <h1>Zip Code: {{ session['zipcode'] }}</h1>
     </div>
-    {% endif %}
   </body>
 </html>

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block title%}
+<title>Confirmation</title>
+{% endblock %}
+{% block css%}
+<link rel="stylesheet" href="{{ url_for("static", filename="confirmation.css")}}" />
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+<h1>Contact Information</h1>
+  <label for="fname">First Name:</label>
+  {{ fname }}
+  <label for="lname">Last Name:</label>
+  {{ lname }}
+  <label for="phone">Phone Number:</label>
+  {{ phone }}
+  <label for="street">Street Address:</label>
+  {{ street }}
+  <label for="states">State:</label>
+  {{ states }}
+  <label for="zip">Zip Code:</label>
+  {{ zip }}
+</div>
+{% endblock %}

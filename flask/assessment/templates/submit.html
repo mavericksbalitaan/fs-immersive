@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block title%}
+<title>Welcome</title>
+{% endblock %}
+{% block css%}
+<link rel="stylesheet" href="{{ url_for("static", filename="confirmation.css")}}" />
+{% endblock %}
+
+
+{% block content %}
+<h1>Welcome</h1>
+{% endblock %}

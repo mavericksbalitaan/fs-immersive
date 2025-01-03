@@ -1,0 +1,23 @@
+
+{% extends 'layout.html' %} {% block title%}
+<title>Admin</title>
+{% endblock %}
+
+{% block css%}
+<link rel="stylesheet" href="{{ url_for("static", filename="admin.css")}}" />
+{% endblock %}
+
+
+{% block content %}
+<h1>Admin Panel</h1>
+  <label for="status">Login Status:</label>
+{{ session["is_loggedIn"] }}
+<br />
+
+  <label for="username">Username:</label>
+{{ session["username"] }}
+<br />
+  <label for="password">Password:</label>
+{{ session["password"] }}
+<br />
+{% endblock %}

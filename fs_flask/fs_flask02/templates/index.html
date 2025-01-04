@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href={{ url_for("static", filename='index.css' )}}>
+{% endblock %}
+
+{% block body %}
+<form method="POST">
+  <label for="fname">First Name:</label>
+  <input
+    type="text"
+    id="fname"
+    name="fname"
+    value=""
+    placeholder="Input your first name"
+  />
+  <label for="lname">Last Name:</label>
+  <input
+    type="text"
+    id="lname"
+    name="lname"
+    value=""
+    placeholder="Input your last name"
+  />
+  <label for="username"> Username:</label>
+  <input
+    type="text"
+    id="username"
+    name="username"
+    value=""
+    placeholder="Input your username"
+  />
+  <label for="password">Password:</label>
+  <input
+    type="password"
+    id="password"
+    name="password"
+    value=""
+    placeholder="Input your password"
+  />
+  <label for="confirmpassword">Confirm Password:</label>
+  <input
+    type="confirmpassword"
+    id="confimpassword"
+    name="confirmpassword"
+    value=""
+    placeholder="Confim your password"
+  />
+  <input type="submit" name="submit" value="Submit" />
+</form>
+<a href="/users">
+  <button>Show Users</button>
+</a>
+
+
+{% endblock %}

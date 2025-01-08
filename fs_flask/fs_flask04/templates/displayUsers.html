@@ -1,0 +1,30 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+<h1>Users</h1>
+<table class="usersTable">
+  <tr>
+    <th>id</th>
+    <th>Full Name</th>
+    <th>Email</th>
+    <th>Created At</th>
+    <th>Actions</th>
+  </tr>
+  {% if users %}
+  {% for user in users%}
+  <tr>
+    <td>{{ user.id}}</td>
+    <td>{{ user.fullname}}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.date_added }}</td>
+    <td class="actions">
+      <a href="/users/{{ user.id}}">Show</a><a href="/users/{{ user.id }}/edit">Edit</a><a href="/users/{{ user.id}}/destroy">Delete</a>
+    </td>
+  </tr>
+  {% endfor %}
+  {% endif %}
+
+</table>
+
+<a href="/users/new">Add a new user</a>
+{% endblock %}

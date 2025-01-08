@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block css %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+<h1>Are you sure you want to delete the following course?</h1>
+<div class="confirmation_details">
+<h3>
+  <label for="name">Name:</label>
+  {{ course.name }}
+</h3>
+<h3>
+  <label for="description">Description:</label>
+  {{ course.description }}
+</h3>
+</div>
+
+<div>
+  <a class="confirmBtns" href="/">
+  <button type="button" class="noBtn">No</button>
+  </a>
+
+  <a class="confirmBtns" href="/courses/destroy/{{ course.id }}">
+  <button type="button" class="yesBtn">Yes! I want to delete this</button>
+  </a>
+</div>
+{% endblock %}

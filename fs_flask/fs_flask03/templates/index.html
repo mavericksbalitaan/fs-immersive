@@ -1,0 +1,51 @@
+{% extends 'layout.html'%} {% block css %} {{ super()}} {% endblock %} {% block
+content %}
+<div class="container">
+  <h1>Add a new course</h1>
+  <form method="POST">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" name="name" placeholder="Input course name:" required />
+    </div>
+    <div class="form-group">
+      <label for="name">Description:</label>
+      <textarea
+          rows="5"
+        name="description"
+        placeholder="Input course description:"
+        required
+      ></textarea>
+    </div>
+    <input type="submit" name="submit" value="Add" />
+  </form>
+</div>
+<div class="courseList">
+<h1>Courses</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Description</th>
+        <th>Date Added</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+ {% if courses:%}
+    {% for course in courses:%}
+   <tr>
+      <td>{{ course.name }}</td>
+      <td>{{ course.description }}</td>
+      <td>{{ course.date_added | format_utc_to_local }}</td>
+      <td>
+        <a href="{{ url_for("deleteCourse", id=course.id )}}">remove</a>
+      </td>
+   </tr>
+      {% endfor%}
+  {% endif %}
+
+    </tbody>
+
+  </table>
+ </div>
+{% endblock %}

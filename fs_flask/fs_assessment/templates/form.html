@@ -1,0 +1,34 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+<form action="/new_appointment" method="POST">
+  <div class="form-group">
+    <div>
+      <label for="date">Date</label>
+      <input type="date" name="appointment_date" required>
+    </div>
+    <div>
+      <label for="time">Time</label>
+      <input type="time" name="appointment_time" required>
+    </div>
+  </div>
+
+  <div class="form-group2">
+    <label for="patient_name">Patient Name</label>
+    <input type="text" name="patient_name" placeholder="Input patient name" required>
+  </div>
+
+  <div class="form-group2">
+    <label for="complain">Complain</label>
+    <textarea rows="5" cols="" name="complain" placeholder="Input complain" required></textarea>
+  </div>
+
+  <input type="submit" name="submit" value="Add Appointment">
+  <a href="/">
+  <input type="button" name="cancel" value="Cancel">
+  </a>
+
+</form>
+
+{% endblock %}
+

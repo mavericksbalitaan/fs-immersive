@@ -16,15 +16,23 @@ body {
 
 table {
   border-collapse: collapse;
+  margin: 1rem auto;
 }
 
-table, th, td {
+table, th, tr {
   border: 1px solid #000;
 }
 
 td {
   text-align: left;
   width: 200px;
+  padding: 0.25rem;
+  border-left: 1px solid #000;
+}
+
+tr > td:nth-child(4) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 form {

@@ -28,7 +28,7 @@ def new_appointment():
         date = datetime.strptime(
             appointment_date, '%Y-%m-%d').date()
         time = datetime.strptime(
-            appointment_time, '%I:%M').time()
+            appointment_time, '%H:%M').time()
 
         print(type(date))
         print(type(time))
